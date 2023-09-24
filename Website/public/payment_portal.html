@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Payment Portal</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                background-color: #1b2a5f;
+                color: white;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .payment-form {
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 2rem;
+                border-radius: 1rem;
+                box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+                max-width: 80vw;
+                width: 20rem;
+            }
+            .success-screen {
+                display: none;
+            }
+            input[type="text"],
+            input[type="number"],
+            input[type="password"] {
+                width: 100%;
+                padding: 1rem;
+                margin: 1rem 0;
+                border: none;
+                background-color: rgba(255, 255, 255, 0.2);
+                color: white;
+                border-radius: 0.5rem;
+            }
+            button {
+                background-color: #007bff;
+                color: white;
+                padding: 1rem 2rem;
+                border: none;
+                border-radius: 0.5rem;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Payment Portal</h1>
+        <div class="payment-form">
+            <form id="paymentForm">
+                <!-- <label for="cardholderName">Cardholder's Name:</label>
+                <input
+                    type="text"
+                    id="cardholderName"
+                    placeholder="Enter cardholder's name"
+                    required
+                /><br /> -->
+                <label for="cardNumber">Card Number:</label>
+                <input
+                    type="text"
+                    id="cardNumber"
+                    placeholder="Enter card number"
+                    required
+                /><br />
+                <label for="expiryDate">Expiration Date:</label>
+                <input
+                    type="text"
+                    id="expiryDate"
+                    placeholder="MM/YY"
+                    required
+                /><br />
+                <label for="cvv">CVV:</label>
+                <input
+                    type="password"
+                    id="cvv"
+                    placeholder="CVV"
+                    required
+                /><br />
+                <button type="button" id="submitPayment">Submit Payment</button>
+            </form>
+        </div>
+
+        <div class="success-screen">
+            <h2>Payment Successful!</h2>
+            <p>Thank you for your payment.</p>
+            <button type="button" onclick="location.href='./main.html'"></button>
+        </div>
+
+        <script>
+            document
+                .getElementById("submitPayment")
+                .addEventListener("click", function () {
+                    // Simulate a successful payment (in a real scenario, you would use a payment gateway here)
+                    setTimeout(function () {
+                        document.querySelector(".payment-form").style.display =
+                            "none";
+                        document.querySelector(
+                            ".success-screen"
+                        ).style.display = "block";
+                    }, 2000); // Simulate a delay for payment processing (2 seconds)
+                });
+        </script>
+    </body>
+</html>

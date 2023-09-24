@@ -1,0 +1,87 @@
+body{
+    background-color: #4873f7;
+    
+  }
+  
+  #indexbody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Align items with space in between */
+    min-height: 100vh;
+    min-width: 40vh;
+    background-color: #101629;
+  }
+
+  .success_img{
+    position: absolute;
+    left: 30.42%;
+    right: 35.52%;
+    margin: 5rem;
+  }
+
+  .login-suc{
+position: absolute;
+left: 36.42%;
+right: 36.72%;
+font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 150%;
+margin: 1rem;
+color: #FFFFFF;
+text-align: center;
+  }
+
+  .bodysuccess{
+position: absolute;
+left: 0%;
+right: 0%;
+top: 76.5%;
+bottom: 0%;
+font-family: 'Lato';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 170%;
+text-align: center;
+color: #fcf9f9;
+
+
+  }
+
+  .btn1{ /* select spot button */
+    position: relative;
+    background-color: #1336a0;
+    color: white;
+    font-weight: bold;
+    border: 0 ;
+    border-radius: 25px;
+    font-size: 1.2rem;
+top: -60px;
+    margin-left: 60rem;
+    margin-bottom: 0%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 20.9375rem;
+    height: 3.4375rem;
+    align-items: flex-end; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+  }
+
+  .btn2{ /* select spot button */
+    background-color: #1336a0;
+    color: white;
+    font-weight: bold;
+    border: 0 ;
+    border-radius: 25px;
+    font-size: 1.2rem; /* Add space between buttons */
+    margin-right: 60rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 20.9375rem;
+    height: 3.4375rem;
+    align-items: flex-end; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+  }

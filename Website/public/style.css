@@ -1,0 +1,191 @@
+body{
+  background-color: #4873f7;
+  
+}
+
+#indexbody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Align items with space in between */
+  min-height: 100vh;
+  min-width: 40vh;
+  background-color: #101629;
+}
+.map{
+  background-color: #4873f7;
+  
+}
+
+.indexdiv1 {
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  height: 40vh; /* Fill the available height */
+  font-size: 30px;
+}
+.indexdiv2 {
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  height: 40vh; /* Fill the available height */
+}
+.photo{
+  margin-bottom: 50px;
+  border-radius: 30%; /* to make circular logo*/
+  /* object-fit: cover;to cover the img completely in the circle */
+}
+#tec
+
+h1 {
+  font-size: 4rem;
+}
+
+.btn {
+  background-color:#4873f7;
+  color: white;
+  font-weight: bold;
+  border: 0 ;
+  border-radius: 25px;
+  font-size: 1.5rem;
+  margin-top: 1rem; /* Add space between buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 20.9375rem;
+  height: 3.4375rem;
+  align-items: flex-end; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+}
+
+.btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+.btn1{ /* select spot button */
+  background-color: #859bdf;
+  color: white;
+  font-weight: bold;
+  border: 0 ;
+  border-radius: 25px;
+  font-size: 1.5rem;
+  margin-top: 45.4375rem; /* Add space between buttons */
+  margin-left: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 20.9375rem;
+  height: 3.4375rem;
+  align-items: flex-end; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+}
+
+
+/*css for sign in page*/
+
+body{
+  background-color: #101629;
+}
+
+
+.form-box{
+  width: 90%;
+  max-width:450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #ffffff;
+  padding: 50px 60px 70px;
+  text-align: center;
+}
+.form-box h1{
+  font-size: 30px;
+  margin-bottom:60px;
+  color:#4873f7;
+  position: relative;
+}
+.form-box h1::after{
+  content: '';
+  width: 30px;
+  height: 4px;
+  border-radius: 3px;
+  background:#4873f7;
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.input-field{
+  background: #eaeaea;
+  margin: 15px 0;
+  border-radius: 3px;
+  display: flex;
+  align-items: center ;
+  max-height: 65px;
+  transition: max-height 0.5s;
+  overflow: hidden;
+}
+input{
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 18px 15px;
+}
+.input-field i{
+  margin-left: 15px;
+  color:#999 ;
+}
+form p{
+  text-align: left;
+  font-size: 15px;
+}
+form p a{
+  text-decoration: none;
+  color:#4873f7;
+}
+
+.btn-field{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-field button{
+  flex-basis: 48%;
+  background:#4873f7;
+  color: #ffffff;
+  height: 40px;
+  border-radius: 20px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  transition: background 1s;
+}
+
+.input-group{
+  height: 280px;
+}
+
+.btn-field button.disable{
+background: #eaeaea;
+color: #555;
+}
+
+
+
+
+
+
+
+
+
+

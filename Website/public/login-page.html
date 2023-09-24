@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+        <title>Login Form</title>
+        <script
+            src="https://kit.fontawesome.com/83fdd24fa9.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div class="main-box">
+            <div class="form-box">
+                <h1 id="title">Sign Up</h1>
+                <form>
+                    <div class="input-group">
+                        <div class="input-field" id="nameField">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" placeholder="Car Number" />
+                        </div>
+
+                        <div class="input-field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="E-mail"
+                            />
+                        </div>
+
+                        <div class="input-field">
+                            <i class="fa-solid fa-lock"></i>
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Password"
+                            />
+                        </div>
+                        <p>Forgot Password <a href="#">Click Here!</a></p>
+                    </div>
+                    <div class="btn-field">
+                        <button type="button" id="signupBtn">Sign Up</button>
+                        <button type="button" id="signinBtn" class="disable">
+                            Sign In
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            let signupBtn = document.getElementById("signupBtn");
+            let signinBtn = document.getElementById("signinBtn");
+            let nameField = document.getElementById("nameField");
+            let title = document.getElementById("title");
+
+            signupBtn.onclick = function () {
+                // Redirect to Login_Success.html
+                window.location.href = "Login_Success.html";
+            };
+
+            signinBtn.onclick = function () {
+                nameField.style.maxHeight = "0";
+                title.innerHTML = "Sign In";
+                signupBtn.classList.add("disable");
+                signinBtn.classList.remove("disable");
+            };
+        </script>
+    </body>
+</html>

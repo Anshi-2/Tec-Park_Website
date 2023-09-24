@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background-color: black;
+                max-height: 180vh;
+                align-items: center;
+            }
+            #full-div {
+                margin: 0;
+                padding: 0;
+            }
+
+            #map {
+                flex: 1;
+                background-color: rgb(0, 0, 0);
+                height: 90vh;
+                width: 100vw;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+
+                top: 0;
+                bottom: 0;
+            }
+            #search-data {
+                flex: 1;
+                background-color: #101629;
+                height: 100vh;
+                width: 100vw;
+                margin: 0;
+                padding: 0;
+                align-items: center;
+            }
+            #search-data input {
+                font-size: large;
+            }
+
+            #searchbar {
+                border: 2px solid #4873f7;
+                background-color: #101629;
+                border-radius: 20px; /* This creates the oval shape */
+                padding: 1vh 0vh;
+                width: 70vw; /* Adjust the width as needed */
+                height: 5vh;
+                outline: none;
+                transition: border-color 0.3s ease-in-out;
+                margin: 2vh 2.5vw;
+                text-align: center;
+                color: white;
+            }
+
+            .locationdata {
+                border: 10px solid #001d72;
+                border-radius: 50rem;
+                width: 90vw;
+                height: 15vh;
+                margin: 5vh 1vw;
+                margin-left: 5vw;
+                background-color: #4873f7;
+            }
+
+            .locationdata span{
+                text-align: center;
+                font-size: x-large;
+            }
+        </style>
+        <link
+            href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css"
+            rel="stylesheet"
+        />
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+        <title>Tec-park</title>
+    </head>
+    <body>
+        <div id="full-div">
+            <div id="map"></div>
+            <div id="search-data">
+                <input
+                    type="text"
+                    placeholder="Search your destination"
+                    id="searchbar"
+                />
+                <button type="button" class="locationdata" onclick="location.href='./Parking_detail.html'">
+                    <span>D-Block Parking</span>
+                    <span id="D1spaces"> | spaces avialable :</span>
+                    <span id="D1price"> | Price :</span>
+                    <br />
+                </button>
+                <button type="button" class="locationdata" onclick="location.href='./Parking_detail.html'">
+                    <span>C-Block Parking</span>
+                    <span id="C1spaces"> | spaces avialable :</span>
+                    <span id="C1price"> | Price :</span>
+                </button>
+                <button type="button" class="locationdata" onclick="location.href='./Parking_detail.html'">
+                    <span>A-Block Parking</span>
+                    <span id="A1spaces"> | spaces avialable :</span>
+                    <span id="A1price"> | Price :</span>
+                </button>
+            </div>
+        </div>
+        <script>
+            mapboxgl.accessToken =
+                "pk.eyJ1IjoicHJpbnRmIiwiYSI6ImNsbXA4aWRoZzAzemoybG4yMWdzMDZ5czgifQ.lMjgffpCOSt7YywqzRz4ow";
+            const map = new mapboxgl.Map({
+                container: "map", // container ID
+                // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+                style: "mapbox://styles/mapbox/navigation-night-v1", // style URL
+
+                center: [76.7794, 30.7333], // starting position [lng, lat]
+                zoom: 15, // starting zoom
+            });
+
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    // Update the map's center with the user's current location
+                    const userLocation = [
+                        position.coords.longitude,
+                        position.coords.latitude,
+                    ];
+                    map.setCenter(userLocation);
+
+                    // Add a custom marker at the user's location
+                    new mapboxgl.Marker({ color: "red" }) // You can customize the marker color and size
+                        .setLngLat(userLocation)
+                        .addTo(map);
+
+                    new mapboxgl.Marker({ color: "yellow" }) // You can customize the marker color and size
+                        .setLngLat([76.57170996421519, 30.771408277303266])
+                        .addTo(map);
+
+                    new mapboxgl.Marker({ color: "yellow" }) // You can customize the marker color and size
+                        .setLngLat([76.57679517727576, 30.767662151954696])
+                        .addTo(map);
+
+                    new mapboxgl.Marker({ color: "yellow" }) // You can customize the marker color and size
+                        .setLngLat([76.57985940231015, 30.771403014889216])
+                        .addTo(map);
+                });
+            } else {
+                console.log("Geolocation is not available in this browser.");
+            }
+        </script>
+        <script>
+            // Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyCfchBLTflNyZ-P1nOXmMFDSLJAob3j10g",
+                authDomain: "tec-park.firebaseapp.com",
+                databaseURL: "https://tec-park-default-rtdb.firebaseio.com",
+                projectId: "tec-park",
+                storageBucket: "tec-park.appspot.com",
+                messagingSenderId: "756938005815",
+                appId: "1:756938005815:web:bd733b565872393ac70eb2",
+                measurementId: "G-LHCP2DRZWM",
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            // Initialize Firestore
+            const db = firebase.firestore();
+
+            // Reference to the Firestore collection
+            const dataCollection = db.collection("parking_spaces"); // Replace with your collection name
+
+            // Reference to the HTML element where data will be displayed
+            // Reference to the HTML elements
+            const D1spaces = document.getElementById("D1spaces");
+            const D1price = document.getElementById("D1price");
+            const C1spaces = document.getElementById("C1spaces");
+            const C1price = document.getElementById("C1price");
+            const A1spaces = document.getElementById("A1spaces");
+            const A1price = document.getElementById("A1price");
+
+            // Function to fetch and update data
+            function fetchDataAndUpdate() {
+                dataCollection.get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        const data = doc.data();
+                        // Assuming that the button has a unique identifier for each location, e.g., data.id
+                            D1spaces.textContent = ` | Spaces available: ${data.D1parking}`;
+                            D1price.textContent = ` | Price (Rs.): ${2*data.D1parking}`;
+                            C1spaces.textContent = ` | Spaces available: ${data.C1parking}`;
+                            C1price.textContent = ` | Price (Rs.): ${2*data.C1parking}`;
+                            A1spaces.textContent = ` | Spaces available: ${data.A1parking}`;
+                            A1price.textContent = ` | Price (Rs.): ${2*data.A1parking}`;
+
+                    });
+                });
+            }
+
+            // Set up an interval to call the function every second
+            const intervalId = setInterval(fetchDataAndUpdate, 1000);
+
+            // Optionally, you can clear the interval when the user leaves the page to stop the function calls
+            window.addEventListener("beforeunload", () => {
+                clearInterval(intervalId);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Display a map on a webpage</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoicHJpbnRmIiwiYSI6ImNsbXA4aWRoZzAzemoybG4yMWdzMDZ5czgifQ.lMjgffpCOSt7YywqzRz4ow";
+      const map = new mapboxgl.Map({
+        container: "map", // container ID
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: "mapbox://styles/mapbox/navigation-night-v1", // style URL
+
+        center: [76.7794, 30.7333], // starting position [lng, lat]
+        zoom: 20, // starting zoom
+      });
+
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          // Update the map's center with the user's current location
+          const userLocation = [
+            position.coords.longitude,
+            position.coords.latitude,
+          ];
+          map.setCenter(userLocation);
+
+          // Add a custom marker at the user's location
+          new mapboxgl.Marker({ color: "red" }) // You can customize the marker color and size
+            .setLngLat(userLocation)
+            .addTo(map);
+
+          new mapboxgl.Marker({ color: "yellow" }) // You can customize the marker color and size
+            .setLngLat([76.57170996421519, 30.771408277303266])
+            .addTo(map);
+
+          new mapboxgl.Marker({ color: "yellow" }) // You can customize the marker color and size
+            .setLngLat([76.57679517727576, 30.767662151954696])
+            .addTo(map);
+
+          new mapboxgl.Marker({ color: "yellow" }) // You can customize the marker color and size
+            .setLngLat([76.57985940231015, 30.771403014889216])
+            .addTo(map);
+        });
+      } else {
+        console.log("Geolocation is not available in this browser.");
+      }
+    </script>
+  </body>
+</html>

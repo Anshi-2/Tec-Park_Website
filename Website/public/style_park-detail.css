@@ -1,0 +1,126 @@
+body{
+    background-color: #4873f7;
+    
+  }
+  .detailpage{
+width: 2300px;
+height: 772px;
+left: 0px;
+top: 40px;
+background:#243c86;
+border-radius: 30px 30px 0px 0px;
+  }
+
+  .parkdetail{
+
+position: absolute;
+width: 127px;
+height: 27px;
+left: 70px;
+top: 20px;
+font-family: 'Lato';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+line-height: 170%;
+color: #E2E9FD;
+
+  }
+
+  .btn{
+position: absolute;
+width: 335px;
+height: 70px;
+left: 20px;
+top: 700px;
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+background: #d2d8ea;
+border-radius: 27.5px;
+position: absolute;
+left: 47.52%;
+right: 35.82%;
+top: 82.45%;
+bottom: 10.45%;
+font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 170%;
+text-align: center;
+color: #090808;
+  }
+
+
+
+  .info1text{
+position: absolute;
+left: 25%;
+right: 15%;
+top: 660px;
+bottom: 27.42%;
+font-family: 'Lato';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 170%;
+color: #FFFFFF;
+  }
+  
+  .info2text{
+position: absolute;
+left: 65%;
+right: 22.5%;
+top: 660px;
+bottom: 27.42%;
+font-family: 'Lato';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 170%;
+color: #FFFFFF;
+  }
+
+  .culot{
+position: absolute;
+left: 20%;
+right: 10.45%;
+top: 100px;
+bottom: 0%;
+  }
+  .culot img{
+    width: 60%;
+    height: 60%;
+border-radius: 29px;
+  }
+
+  .chanlot{
+    position: absolute;
+    left: 70%;
+    right: -10.45%;
+    top: 100px;
+    bottom: 0%;
+      }
+      .chanlot img{
+        width: 60%;
+        height: 60%;
+    border-radius: 29px;
+      }
+  .parking_name{
+position: absolute;
+left: 23%;
+right: 22.69%;
+top: 600px;
+bottom: 59.26%;
+font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+color: #FFFFFF;
+
+
+  }
